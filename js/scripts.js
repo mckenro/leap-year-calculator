@@ -1,8 +1,8 @@
 //Backend
 var leapYear = function(inputYear) {
-if (inputYear % 4 === 0) {
+if ((inputYear % 4 === 0) && (inputYear % 100 !== 0) || (inputYear % 400 === 0)) {
   return true;
-}else {
+  }else {
   return false;
 }
 };
@@ -12,7 +12,8 @@ $(document).ready(function() {
     event.preventDefault();
     var inputYear = parseInt($("input#year").val());
     var result = leapYear(inputYear);
-    console.log(result);
+    $("#result").text(result);
+    //console.log(result);
   });
 });
 
